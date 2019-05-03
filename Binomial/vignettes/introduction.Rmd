@@ -1,0 +1,76 @@
+---
+title: "Introduction to Binomial"
+author: "Francesco Dalla Ricca"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to Binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(Binomial)
+```
+
+##Binomial Statistics
+
+This package lets you run statistical analysis on binomial distribution and even make graphs to better visualize the data.
+
+##Creating a binomial distribution
+
+Use the bin_distribution() function to make a data frame with the probability of differing amounts of success.
+```{r}
+bindis <- bin_distribution(trials = 5, prob = 0.5)
+bindis
+```
+
+If you want to see the data frame in the form of a plot:
+```{r}
+plot(bindis)
+```
+
+##Cumulative distribution
+
+Cumulative distribution is like a binomial distribution except it also shows the cumulative odds of each amount of success:
+```{r}
+cumdis <- bin_cumulative(trials = 5, prob = 0.5)
+cumdis
+```
+
+And to see the data frame in the form of a plot:
+```{r}
+plot(cumdis)
+```
+
+##The Choose function
+In order to calculate the number of combinations of k successes in n trials, uses the bin_choose() function like so:
+
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+You can also run bin_choose on a vector of k successes to see the different possible combinations of different amounts of success in n trials
+
+```{r}
+bin_choose(n = 5, k = 1:3)
+```
+
+##The Probability function
+To see the probability of getting k successes in n trials, use the bin_probability() function
+
+```{r}
+bin_probability(success = 2, trials = 5, prob = 0.5)
+```
+
+Like bin_choose, you can also input a vector for the successeses
+```{r}
+bin_probability(success = 1:3, trials = 5, prob = 0.5)
+```
+
+##The Binvar function
+The bin_variable() function returns a binomial random variable object
+```{r}
+bin_variable(trials = 10, prob = 0.5)
+```
