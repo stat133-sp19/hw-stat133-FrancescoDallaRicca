@@ -1,0 +1,13 @@
+Package: Binomial
+Type: Package
+Title: Binomial_package
+Version: 0.1.0
+Authors@R: person("Francesco", "Dalla Ricca", email = "francescodr@berkeley.edu",
+                  role = c("aut", "cre"))
+Maintainer: Francesco Dalla Ricca <francescodr@berkeley.edu>
+Description: A package that has functions to run statistics on binomial distributions and/or
+    make graphs to better visualize the statistics.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
