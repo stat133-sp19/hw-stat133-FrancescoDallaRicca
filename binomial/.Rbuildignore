@@ -1,0 +1,5 @@
+^README.md
+^devtools-Binomial.R
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
